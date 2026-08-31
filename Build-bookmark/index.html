@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to HTML Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Markdown to HTML Converter</h1>
+            <p class="subtitle">Convert Markdown syntax to HTML in real-time. Type in the Markdown editor and see the HTML output and live preview instantly.</p>
+        </header>
+
+        <div class="converter-container">
+            <div class="panel">
+                <div class="panel-header">
+                    <span>Markdown Input</span>
+                    <span class="icon">📝</span>
+                </div>
+                <div class="panel-content">
+                    <textarea id="markdown-input" placeholder="Type your Markdown here..."># Welcome to Markdown Converter
+## Convert Markdown to HTML
+### Try these examples:
+
+This is **bold text** and this is *italic text*.
+
+You can also use __alternative bold__ and _alternative italic_.
+
+Here's a [link to freeCodeCamp](https://www.freecodecamp.org)
+
+And an image: ![Markdown Logo](https://markdown-here.com/img/icon256.png)
+
+> This is a blockquote with **bold** and *italic* text.
+> **this is a *quote***
+
+### More Examples:
+- Headings: # H1, ## H2, ### H3
+- Lists: * Item 1, * Item 2
+- Code: `inline code`</textarea>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <span>HTML Output</span>
+                    <span class="icon">📄</span>
+                </div>
+                <div class="panel-content">
+                    <div id="html-output"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="convert-btn">
+                <span>🔄</span> Convert Markdown
+            </button>
+            <button id="clear-btn" class="secondary">
+                <span>🗑️</span> Clear All
+            </button>
+            <button id="example-btn" class="secondary">
+                <span>📋</span> Load Example
+            </button>
+        </div>
+
+        <div class="preview-container panel">
+            <div class="panel-header">
+                <span>Live Preview</span>
+                <span class="icon">👁️</span>
+            </div>
+            <div class="panel-content preview-content" id="preview"></div>
+        </div>
+
+        <div class="markdown-guide">
+            <h2>Markdown Syntax Guide</h2>
+            <div class="guide-grid">
+                <div class="guide-item">
+                    <h4>Headings</h4>
+                    <div class="markdown-example"># Heading 1</div>
+                    <div class="markdown-example">## Heading 2</div>
+                    <div class="markdown-example">### Heading 3</div>
+                    <div class="html-example">&lt;h1&gt;Heading 1&lt;/h1&gt;</div>
+                </div>
+
+                <div class="guide-item">
+                    <h4>Bold Text</h4>
+                    <div class="markdown-example">**bold text** or __bold text__</div>
+                    <div class="html-example">&lt;strong&gt;bold text&lt;/strong&gt;</div>
+                </div>
+
+                <div class="guide-item">
+                    <h4>Italic Text</h4>
+                    <div class="markdown-example">*italic text* or _italic text_</div>
+                    <div class="html-example">&lt;em&gt;italic text&lt;/em&gt;</div>
+                </div>
+
+                <div class="guide-item">
+                    <h4>Links</h4>
+                    <div class="markdown-example">[link text](URL)</div>
+                    <div class="html-example">&lt;a href="URL"&gt;link text&lt;/a&gt;</div>
+                </div>
+
+                <div class="guide-item">
+                    <h4>Images</h4>
+                    <div class="markdown-example">![alt text](image URL)</div>
+                    <div class="html-example">&lt;img alt="alt text" src="image URL"&gt;</div>
+                </div>
+
+                <div class="guide-item">
+                    <h4>Blockquotes</h4>
+                    <div class="markdown-example">> quoted text</div>
+                    <div class="html-example">&lt;blockquote&gt;quoted text&lt;/blockquote&gt;</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Markdown to HTML Converter | Built for freeCodeCamp Lab</p>
+            <p>Note: This converter handles basic Markdown syntax. For full Markdown support, consider using a comprehensive library.</p>
+        </footer>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
