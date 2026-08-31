@@ -48,3 +48,55 @@
 // for(initialization; condition; increment/decrement){
 //     //code to be repeated
 // } 
+
+// for (let i = 1; i < 101; i++) {
+//     console.log(i);
+// }
+// let i = 1;
+// while (i < 32) {
+//     i++;
+// }
+
+
+
+// Q1. print number from 1 to 10 using a for loop.
+
+for (let i = 1; i < 11; i++) {
+    console.log(i);
+}
+
+// Q2. print numbers from 10 to 1 using a while loop.
+
+
+let i = 10;
+while (i > 0) {
+    console.log(i);
+    i--;
+}
+
+// for (let i = 10; i >= 1; i--) {
+//     console.log(i);
+// }
+
+// Q3. print even  numbers 1 to 29 use a for loop.
+
+for (let i = 1; i <= 29; i++) {
+
+    if (i % 2 === 0) {
+        console.log(i);
+    }
+
+}
+
+
+// Q4. print odd numbers 1 to 15 using a while loop:
+
+let j = 1;
+while (j <= 15) {
+
+    if (j % 2 === 1) {
+        console.log(j);
+    }
+
+    j++;
+}
