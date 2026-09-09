@@ -118,32 +118,265 @@
 
 // Q7. Print all numbers between 1 to 50 that are divisible by 3.
 
-for (let i = 1; i <= 50; i++) {
-    if (i % 3 === 0) {
-        console.log(i);
-    }
-}
+// for (let i = 1; i <= 50; i++) {
+//     if (i % 3 === 0) {
+//         console.log(i);
+//     }
+// }
 
 
 // Q8. ask the user for a number and print wether each number from 1 to the number is even or odd.
 
 
-let num = prompt("give a number");
+// let num = prompt("give a number");
 
-for (let i = 1; i <= num; i++) {
-    if (i % 2 === 0) {
-        console.log(`${i} is even`);
-    } else {
-        console.log(`${i} is odd`);
-    }
-}
+// for (let i = 1; i <= num; i++) {
+//     if (i % 2 === 0) {
+//         console.log(`${i} is even`);
+//     } else {
+//         console.log(`${i} is odd`);
+//     }
+// }
 
 
 // Q9. Count how many numbers between 1 to 100 are  divisible by 3 abd 5.
 
-for (let i = 1; i <= 100; i++) {
+// for (let i = 1; i <= 100; i++) {
 
-    if (i % 3 === 0 && i % 5 === 0) {
-        console.log(i);
-    }
-}
+//     if (i % 3 === 0 && i % 5 === 0) {
+//         console.log(i);
+//     }
+// }
+
+
+
+// Q1. Stop at Frist Multiple of 7 :
+// write a loop from 1 to 100 that:
+// . prints each numbr 
+// . stops completely when it finds the first number divisible by 7 
+
+// for (let i = 1; i <= 100; i++) {
+//     console.log(i); // It prints every number from 1 to 100
+//     if (i % 7 === 0) {
+//         break;
+//         // console.log(i)// Print for this would not print 7 
+//     }
+
+// }
+
+// Q2: Skip Multiples of 3:
+// Write a loop from 1 to 20 that:
+// . skips numbers divisible by 3
+// . prints all other numbers:
+
+// use continue:
+// Expected output: 1,2,4,5,7,8,10,11,13,14,16,17,19,20
+
+
+// for (let i = 1; i <= 20; i++) {
+//     if (i % 3 === 0) {
+//         continue;
+//     }
+//     console.log(i);
+// }
+
+// Q3: print First 5 odd numbers Only 
+// Write a loop from 1 to 100 that :
+
+// .prints only 5 odd numbers
+// Then stops the loop:
+
+// use both if, Continue, and a counter +break
+
+// Expected output: 1 3 5 7 9;
+// let count = 0;
+// for (let i = 1; i <= 100; i++) {
+//     if (i % 2 === 1) {
+//         count++;
+//         console.log(i);
+//     }
+
+//     if (count === 5) break;
+
+// }
+
+// //// /// Function started
+
+// Q1. what's the difference between function declaration and expression in terms of hoisting?
+
+// abc();
+
+// function abc() { } // this is working
+
+// const arr = function abc() {};
+// this is show the error
+
+
+
+// Q2. Use rest parameter to accept any number of scores and return the total.
+
+
+// function getScore(...scores) {
+//     let total = 0;
+//     scores.forEach(function(value) {
+//         total += value;
+//     });
+//     return total;
+// }
+
+// console.log(getScores(10, 20, 30, 40, 50));
+
+// write a BMI calculator
+
+// function bmiCalculator(weight, height) {
+//     return weight / (height * height);
+// }
+
+// console.log(bmiCalculator(70, 1.75).toFixed(2));
+
+
+// discount calculator:
+
+// function discountCalculator(discount) {
+//     return function(price) {
+//         return price - (price * discount / 100);
+//     }
+// }
+
+// let ten = discountCalculator(10);
+// let twenty = discountCalculator(20);
+// let fifty = discountCalculator(50);
+
+// console.log(ten(1800));
+// console.log(twenty(1800));
+// console.log(fifty(1800));
+
+
+// // closure:
+// function counter() {
+//     let count = 0;
+//     return function() {
+//         count++;
+//         return count;
+//     }
+// }
+
+// let abc = counter();
+// console.log(abc()); // 1 hold the value id self in lexicl environemnt
+// console.log(abc()); // 2
+// console.log(abc()); // 3
+// console.log(abc()); // 4
+// console.log(abc()); // 5
+
+
+// Create a pure function to transform a value
+
+// function double(val) {
+//     return val * 2;
+// }
+
+// console.log(double(5));
+
+// use IIFE to isolate a variable  
+
+// (function() {
+//     const password = "secert password";
+//     console.log(password);
+// })();
+// do not access to outside the iife 
+// console.log(password);
+
+
+
+// Array Concepts:
+
+// Array methods: push, pop, shift, unshift, splice, slice, reverse, sort,
+// map filter, reduce, find, some, every, flat, 
+
+
+// let arr = [1, 2, 3, 4, 5]
+
+// arr.push() // add the vale 
+// arr.pop() // remove the last value
+// arr.shift() // remove the first value
+// arr.unshift() // add the value in frist
+// arr.splice(2, 0, 10) // remove the 2 value and add 10
+// arr.slice() // make a copy
+// arr.reverse() // reverse the array
+// arr.sort(function(a, b) {
+//     return a - b;
+// }) // sort the array accepted the function on based the value they retun assinding and desiending order
+
+// forEach  accepted the fucntion and work the fucntion on every element in array no value return 
+// arr.forEach(function(value) {
+//     console.log(value + 5);
+// })
+
+// map srf tab use karna jab new array banana ho pichle array ke data ke bas per
+// map dikhte he sath maaan main ek blank array bana liya karo
+// arr.map(function(val) {
+//     return 12; // return in new array on base of old array
+//     //and you do not return anything in map then return "undefined" in new array
+// })
+// Kab use karna ha map ?
+// jab be apko aisa koi case dikhe jahan par ek array se naya array banega and wo naya array kuch values ko rakhega tab map lagegha. That's it
+
+
+// Filter in 
+// Kab use karna ha filter?
+// Jab be apko aisa koi case dikhe jahan par ek array se naya array banega and wo naya array  apki marzi hai wo kuch values ko rakhe ya na rakhe tab filter lagegha. That's it
+
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// let evenNumber = arr.filter(function(val) {
+//     if (val % 2 === 0) {
+//         return val;
+//     }
+// })
+// console.log(evenNumber);
+
+
+// Reduce:
+// reduce ka use tab hota ha jab apko ek array se single value nikalni ho 
+// let arr = [1, 2, 3, 4, 5]
+
+// let sum = arr.reduce(function(total, val) {
+//     return total + val;
+// }, 0)
+// console.log(sum);
+
+// Find now use the find :
+// find ka use tab hota ha jab apko ek array se ek value nikalni ho to wo first value match hujaye to ush value ko nikal le 
+// let arr = [1, 2, 3, 4, 5]
+
+// let find = arr.find(function(val) {
+//     return val > 4;
+// })
+// console.log(find);
+
+// Some : matlab srf ek bhi condition match ho jaye to true return kare
+// let arr = [1, 2, 3, 4, 5]
+
+// let some = arr.some(function(val) {
+//     return val > 4;
+// })
+// console.log(some);
+
+// Every : matlab srf ek bhi condition match na ho to false return kare 
+// let arr = [1, 2, 3, 4, 5]
+
+// let every = arr.every(function(val) {
+//     return val > 4;
+// })
+// console.log(every);
+
+// Destructuring , spread operater.
+
+// let arr = [1, 2, 3, 4, 5];
+// let [a, b, , c] = arr; // [1, 2, 4] This is the destructuring simple example
+
+// now is spread Operater:
+// let arr = [1, 2, 3, 4, 5];
+
+// let newArr = [...arr, 6, 7, 8];
+// console.log(newArr);
