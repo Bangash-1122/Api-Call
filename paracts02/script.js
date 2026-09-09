@@ -380,3 +380,36 @@
 
 // let newArr = [...arr, 6, 7, 8];
 // console.log(newArr);
+
+// TO solve the sum question of arrays:
+
+// Qs : Add "Mango" at the end and "Pineapple" at the beginning of the array.
+// let fruits = ["Apple", "Banana", "Orange"];
+
+// fruits.push("Mango");
+// fruits.unshift("Pineapple");
+
+// Qs : Replace "banana" with "kiwi" in the array above.
+
+// let fruits = ["Apple", "Banana"];
+
+// fruits.pop("Banana");
+// fruits.push("Kiwi");
+
+// Qs : Insert "Red" and "Blue" at index 1 in this array:
+
+// let colors = ["Yellow", "Green", "Purple"];
+// colors.splice(1, 0, "Red", "Blue");
+// console.log(colors);
+
+// Qs : Extract only the middle 3 elements from this array
+
+// let items = [1, 2, 3, 4, 5, 6, 7];
+// let middle = items.slice(1, 5);
+// console.log(middle);
+
+// Qs : Sort this array alphabetically and then reverse it
+
+let names = ["Zoya", "Abid", "Usama", "Abdullah", "Usman"];
+names.sort().reverse();
+console.log(names);
