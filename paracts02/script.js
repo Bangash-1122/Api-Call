@@ -491,10 +491,59 @@
 
 // Clone this array properly (not by reference):
 
-let arr = [1, 2, 3];
-let arr2 = [...arr];
-
-console.log(arr2);
+// let arr = [1, 2, 3];
+// let arr2 = [...arr];
+// console.log(arr2);
 
 
 // Object Concepts:
+// let obj = {
+//     name: "John",
+//     age: 30,
+//     city: "New York"
+// };
+// let aa = "name"
+// obj[aa]
+// Access object properties
+// console.log(obj.name);
+
+// Nasted and deep object:
+
+// const user = {
+//     id: 1,
+//     name: "Ubaid",
+//     age: 25,
+//     address: {
+//         city: "Karachi",
+//         country: "Pakistan",
+//         location: {
+//             lat: 24.8609641,
+//             lng: 67.0011368,
+//         }
+//     }
+// };
+// user.address.location.lng;
+// console.log(user.address.location.lng);
+// let {lat, lng} = user.address.location;
+// lng access only lng to check out the value besacuse your creteing the veriable
+
+// loops on object for-in object.keys, object.entries
+
+// let obj = {
+//     name: "Ubaid",
+//     age: 26,
+//     email: "[EMAIL_ADDRESS]",
+//     city: "Peshawar"
+// };
+// for (let key in obj) {
+//     obj[key]
+// }
+
+// Destructure the key "first-name" as a variable called firstname
+
+// const user = {
+//     "first-name": "Bangash",
+// };
+// let {
+//     "first-name": firstname
+// } = user;
