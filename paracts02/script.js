@@ -410,6 +410,91 @@
 
 // Qs : Sort this array alphabetically and then reverse it
 
-let names = ["Zoya", "Abid", "Usama", "Abdullah", "Usman"];
-names.sort().reverse();
-console.log(names);
+// let names = ["Zoya", "Abid", "Usama", "Abdullah", "Usman"];
+// names.sort().reverse();
+// console.log(names);
+
+// Use.map() to square each number:
+// let arr = [1, 2, 3, 4]
+
+// let newArr = arr.map(function(val) {
+//     return val * val;
+// })
+// console.log(newArr);
+
+
+//Use.filter() to keep num of greter then 10
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+// let newArr = arr.filter(val => {
+//     return val > 10;
+// })
+// console.log(newArr);
+
+// Use.reduce() to find the sum of this arrary:
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// let sum = arr.reduce(function(acc, val) {
+//     return acc + val;
+// }, 0)
+// console.log(sum);
+
+// // Use.find() to get the first num less then 10;
+// let arr = [12, 15, 3, 8, 20];
+
+// let first = arr.find(function(val) {
+//     return val < 10;
+// })
+
+// console.log(first);
+
+
+// Use.some() to check if any student has scored below 35:
+// let marks = [45, 55, 25, 75, 85];
+
+// let below35 = marks.some(function(val) {
+//     return val < 35;
+// })
+
+// console.log(below35);
+
+// Use .every() to check if all number are even:
+// let arr = [2, 4, 6, 8, 10]
+
+// let even = arr.every(function(val) {
+//     return val % 2 === 0;
+// })
+// console.log(even);
+
+// Destructuring this array to get firstName and lastName:
+
+// let fullName = ["Ubaid", "Bangash"];
+// let [firstName, lastName] = fullName;
+
+// console.log(firstName);
+// console.log(lastName);
+
+
+// Merge two arrays using spread operator:
+
+// let a = [1, 2]
+// let b = [3, 4];
+
+// let newArr = [...a, ...b];
+// console.log(newArr);
+
+// Add "India" to the start of this array using spread operater:
+// let counteries = ["USA", "UK", "Germany"];
+
+// let newCounteries = ["India", ...counteries];
+// console.log(newCounteries);
+
+// Clone this array properly (not by reference):
+
+let arr = [1, 2, 3];
+let arr2 = [...arr];
+
+console.log(arr2);
+
+
+// Object Concepts:
