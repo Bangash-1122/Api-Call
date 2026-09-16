@@ -5,12 +5,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #main {
+            display: flex;
+            padding: 30px;
+            height: 100vh;
+            width: 100vw;
+            background-color: #333;
+        }
+
+        input {
+            display: block;
+        }
+
+        /* #btn {
+            padding: 12px 22px;
+            background-color: #0a655c;
+            border-radius: 30px;
+            cursor: pointer;
+            color: white;
+            font-family: sans-serif;
+        } */
+
+
+
+        .card {
+            display: inline-block;
+            margin-top: 50px;
+            margin-left: 50px;
+            height: 200px;
+            width: 300px;
+            border-radius: 30px;
+            border: 2px solid#555;
+            color: white;
+        }
+
+        .card h3 {
+            padding-top: 10px;
+            padding-left: 10px;
+            font-size: 15px;
+            text-transform: capitalize;
+            font-family: sans-serif;
+        }
+
+        .card h5 {
+            padding-top: 5px;
+            padding-left: 10px;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        .card p {
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+
+        .card img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            overflow: hidden;
+            border-radius: 30px;
+        }
+    </style>
 </head>
 
-<body style="background-color: #313131; color:whitesmoke;">
-    <h1 class="heading">Now I am revesion to DOM manipulation</h1>
-    <h1 class="heading">hello world</h1>
-    <h1 class="heading">hey kisy hun</h1>
+<body>
+    <div id="main">
+        <form id="form">
+            <input type="text" placeholder="Enter your name">
+            <input type="text" placeholder="occupation">
+            <input type="text" placeholder="Enter your info">
+            <input type="profile-pic" placeholder="profile pic">
+            <input type="submit">
+        </form>
+    </div>
+    </div>
 </body>
 <script src="script.js"></script>
 
