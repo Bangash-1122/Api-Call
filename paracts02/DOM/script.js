@@ -107,40 +107,87 @@
 //     }
 // })
 
-let form = document.querySelector("#form");
-let input = document.querySelectorAll("input");
-let main = document.querySelector("#main");
 
-form.addEventListener("submit", function(dets) {
-    dets.preventDefault();
-    let card = document.createElement('div');
-    card.classList.add('card');
+// let form = document.querySelector("#form");
+// let input = document.querySelectorAll("input");
+// let main = document.querySelector("#main");
 
-    let profile = document.createElement("div");
-    profile.classList.add("profile");
-    card.appendChild(profile);
+// form.addEventListener("submit", function(dets) {
+//     dets.preventDefault();
 
+//     let card = document.createElement('div');
+//     card.classList.add('card');
 
-    let img = document.createElement("img");
-    img.setAttribute("src", dets.target[3].value);
-
-    let h3 = document.createElement('h3');
-    h3.textContent = dets.target[0].value;
-    let h5 = document.createElement('h5');
-    h5.textContent = dets.target[1].value;
-    let p = document.createElement('p');
-    p.textContent = dets.target[2].value;
-
-    profile.appendChild(img);
-    profile.appendChild(h3);
-    profile.appendChild(h5);
-    profile.appendChild(p);
-    main.appendChild(card);
+//     let profile = document.createElement("div");
+//     profile.classList.add("profile");
+//     card.appendChild(profile);
 
 
-    input.forEach(function(element) {
-        if (element.type !== "submit") {
-            element.value = "";
-        }
-    });
+//     let img = document.createElement("img");
+//     img.setAttribute("src", dets.target[0].value);
+
+//     let h3 = document.createElement('h3');
+//     h3.textContent = dets.target[1].value;
+//     let h5 = document.createElement('h5');
+//     h5.textContent = dets.target[2].value;
+//     let p = document.createElement('p');
+//     p.textContent = dets.target[3].value;
+
+//     profile.appendChild(img);
+//     profile.appendChild(h3);
+//     profile.appendChild(h5);
+//     profile.appendChild(p);
+//     main.appendChild(card);
+
+
+//     input.forEach(function(element) {
+//         if (element.type !== "submit") {
+//             element.value = "";
+//         }
+//     });
+// });
+
+
+
+// let abc = document.querySelector("#abc");
+
+// abc.addEventListener("mousemove", function() {
+//     abc.style.backgroundColor = "green"
+// });
+// abc.addEventListener("mouseout", function() {
+//     abc.style.backgroundColor = "red"
+// });
+
+// let abc = document.querySelector("#abc");
+
+// window.addEventListener("mousemove", function(dets) {
+//     abc.style.left = dets.clientX + "px";
+//     abc.style.top = dets.clientY + "px";
+// });
+
+// let input = document.querySelector("input");
+// let span = document.querySelector("span");
+
+// input.addEventListener("input", function(e) {
+//     let left = 20 - input.value.length;
+//     span.texContent = left;
+
+//     if (left < 0) {
+//         span.style.color = "red";
+//     } else {
+//         span.style.color = "white";
+//     }
+// });
+
+
+let nm = document.querySelector("#name");
+let form = document.querySelector("form");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    if (nm.value.length <= 3) {
+        document.querySelector("#hide").style.display = "initial";
+    } else {
+        document.querySelector("#hide").style.display = "none";
+    }
 });

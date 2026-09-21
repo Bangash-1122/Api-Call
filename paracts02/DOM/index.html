@@ -16,85 +16,71 @@
         body {
             height: 100%;
             width: 100%;
-        }
-
-        #main {
-            display: flex;
-            padding: 30px;
-            height: 100vh;
-            width: 100vw;
-            background-color: #333;
-        }
-
-        input {
-            display: block;
-        }
-
-        /* #btn {
-            padding: 12px 22px;
-            background-color: #0a655c;
-            border-radius: 30px;
-            cursor: pointer;
-            color: white;
-            font-family: sans-serif;
-        } */
-
-
-
-        .card {
-            display: inline-block;
-            margin-top: 50px;
-            margin-left: 50px;
-            height: 200px;
-            width: 300px;
-            border-radius: 30px;
-            border: 2px solid#555;
-            color: white;
-        }
-
-        .card h3 {
-            padding-top: 10px;
-            padding-left: 10px;
-            font-size: 15px;
-            text-transform: capitalize;
-            font-family: sans-serif;
-        }
-
-        .card h5 {
-            padding-top: 5px;
-            padding-left: 10px;
-            font-size: 10px;
-            text-transform: uppercase;
-        }
-
-        .card p {
-            font-size: 12px;
-            margin-top: 10px;
-        }
-
-
-        .card img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
+            position: relative;
             overflow: hidden;
-            border-radius: 30px;
+            padding: 30px;
+        }
+
+        small {
+            color: red;
+            font-size: 12px;
+        }
+
+        #hide {
+            display: none;
         }
     </style>
 </head>
 
 <body>
-    <div id="main">
+    <!-- <div id="main">
         <form id="form">
+            <input type="profile-pic" placeholder="profile pic">
             <input type="text" placeholder="Enter your name">
             <input type="text" placeholder="occupation">
             <input type="text" placeholder="Enter your info">
-            <input type="profile-pic" placeholder="profile pic">
             <input type="submit">
         </form>
     </div>
-    </div>
+    </div> -->
+
+    <!-- <ul>
+        <li>apple</li>
+        <li>banana</li>
+        <li>cherry</li>
+        <li>guava</li>
+        <li>mango</li>
+    </ul> -->
+
+    <!-- <input type="text" placeholder="write anything">
+    <h1>characters left : <span>20</span>
+    </h1> -->
+
+
+    <form>
+        <input id="name" type="text" placeholder="name" />
+        <div id="hide">
+            <br>
+            <small hidden>yor name should be atleast 3 characters</small>
+        </div>
+
+        <br>
+        <input id="email" type="email" placeholder="email" />
+        <br>
+        <input id="password" type="password" placeholder="password" />
+        <br>
+        <select title="gender">
+            <option value="">select your gender</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">other</option>
+        </select>
+        <br>
+        <textarea placeholder="Tell us about you"></textarea>
+        <br>
+        <input type="submit" value="submit" />
+    </form>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 
 </html>
