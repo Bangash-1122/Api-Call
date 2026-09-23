@@ -180,13 +180,47 @@
 // });
 
 
-let nm = document.querySelector("#name");
-let form = document.querySelector("form");
+// let nm = document.querySelector("#name");
+// let form = document.querySelector("form");
 
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    const regex = /^[A-Za-z]+$/;
-    if (nm.value.match(regex)) {
+// form.addEventListener("submit", function(e) {
+//     e.preventDefault();
+//     const regex = /^[A-Za-z]+$/;
+//     if (nm.value.match(regex)) {
 
-    }
-});
+//     }
+// });
+
+
+// let count = 10;
+// let int = setInterval(function() {
+//     if (count >= 0) {
+//         console.log(count);
+//         count--;
+//     } else {
+//         clearInterval(int);
+//     }
+// }, 1000)
+
+
+// let count = 0;
+// let progress = document.querySelector(".progress-bar");
+// let percentText = document.querySelector("#percentText");
+
+
+// let int = setInterval(function() {
+//     if (count <= 99) {
+//         count++;
+//         progress.style.width = `${count}%`;
+//         percentText.textContent = `${count}%`;
+//     } else {
+//         document.querySelector("h2").textContent = "Download complete";
+//         clearInterval(int);
+//     }
+// }, 10000 / 100);
+
+
+// localstroge -> browser mein data save karna jo ki browser band hone per bhe delete nahi huta
+// sessionsStorage - > ye apka data temporarily store karta hai matlab ki tab band hua aur data gaya
+//  cookies -> ye bhe data store karta hai lakin hai and aapka data browser ke cookies name ki property mein save huta hai and
+// ye cookie concept kam data ya light data ky leya huta hai.
