@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Call Notes</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- =========================
+             LEFT CONTROLS
+        ========================== -->
+        <aside class="side-controls">
+
+            <button type="button" id="addBtn" class="control-btn" aria-label="Add new call">
+                +
+            </button>
+
+            <button type="button" id="upBtn" class="control-btn arrow-btn" aria-label="Previous card">
+                ↑
+            </button>
+
+            <button type="button" id="downBtn" class="control-btn arrow-btn" aria-label="Next card">
+                ↓
+            </button>
+
+        </aside>
+
+
+        <!-- =========================
+             CARD AREA
+        ========================== -->
+        <section class="card-area">
+
+            <div id="cardContainer" class="card-container">
+
+                <!--
+                    Your JavaScript can generate cards here.
+
+                    Example structure:
+
+                    <article class="call-card">
+                        ...
+                    </article>
+                -->
+
+                <article class="call-card">
+
+                    <div class="card-header">
+
+                        <img class="avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRAacd782EjgUIyOy4SUAySy7PeMKwC6nhL1hlrPFnwA&s=10" alt="Fatima Uma">
+
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <h2>Fatima Uma</h2>
+
+                        <div class="info-row">
+                            <span>Home town</span>
+                            <span>Singapore</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span>Bookings</span>
+                            <span>3 times</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-actions">
+
+                        <button type="button" class="card-btn call-btn">
+                            <span>☎</span>
+                            Call
+                        </button>
+
+                        <button type="button" class="card-btn message-btn">
+                            Message
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RIGHT COLOR CONTROLS
+        ========================== -->
+        <aside class="color-controls">
+
+            <button type="button" class="color-btn color-black" data-color="black" aria-label="Black theme"></button>
+
+            <button type="button" class="color-btn color-purple" data-color="purple" aria-label="Purple theme"></button>
+
+            <button type="button" class="color-btn color-orange" data-color="orange" aria-label="Orange theme"></button>
+
+            <button type="button" class="color-btn color-teal" data-color="teal" aria-label="Teal theme"></button>
+
+        </aside>
+
+    </main>
+
+
+    <!-- =========================
+         NEW CALL FORM
+    ========================== -->
+    <section id="callModal" class="modal" aria-hidden="true">
+
+        <div class="modal-card">
+
+            <div class="modal-header">
+
+                <h1>New Call</h1>
+
+            </div>
+
+
+            <form id="callForm">
+
+                <!-- Image URL -->
+                <div class="form-group">
+
+                    <label for="imageUrl">
+                        Image URL
+                    </label>
+
+                    <input type="url" id="imageUrl" name="imageUrl" placeholder="https://example.com/photo.jpg">
+
+                </div>
+
+
+                <!-- Full Name -->
+                <div class="form-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter full name">
+
+                </div>
+
+
+                <!-- Home Town -->
+                <div class="form-group">
+
+                    <label for="homeTown">
+                        Home Town
+                    </label>
+
+                    <input type="text" id="homeTown" name="homeTown" placeholder="Enter home town">
+
+                </div>
+
+
+                <!-- Purpose -->
+                <div class="form-group">
+
+                    <label for="purpose">
+                        Purpose
+                    </label>
+
+                    <input type="text" id="purpose" name="purpose" placeholder="e.g., Quick appointment note">
+
+                </div>
+
+
+                <!-- Categories -->
+                <fieldset class="category-group">
+
+                    <legend>
+                        Category
+                    </legend>
+
+                    <div class="category-list">
+
+                        <label class="category emergency">
+                            <input type="checkbox" name="category" value="Emergency">
+                            <span class="checkbox"></span>
+                            Emergency
+                        </label>
+
+
+                        <label class="category important">
+                            <input type="checkbox" name="category" value="Important">
+                            <span class="checkbox"></span>
+                            Important
+                        </label>
+
+
+                        <label class="category urgent">
+                            <input type="checkbox" name="category" value="Urgent">
+                            <span class="checkbox"></span>
+                            Urgent
+                        </label>
+
+
+                        <label class="category no-rush">
+                            <input type="checkbox" name="category" value="No Rush">
+                            <span class="checkbox"></span>
+                            No Rush
+                        </label>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- Create -->
+                <button type="submit" id="createBtn" class="submit-btn">
+                    Create Note
+                </button>
+
+
+                <!-- Close -->
+                <button type="button" id="closeBtn" class="close-btn">
+                    Close
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
