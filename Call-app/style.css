@@ -1,0 +1,749 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --page-bg: #f7f7f7;
+    --card-bg: #ffffff;
+    --text: #111111;
+    --muted: #777777;
+    --border: #e9e9e9;
+
+    --black: #111111;
+    --purple: #a34cff;
+    --orange: #ff963d;
+    --teal: #18b8aa;
+
+    --danger: #ff4b52;
+}
+
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--page-bg);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   MAIN APP
+========================================= */
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+/* =========================================
+   LEFT CONTROLS
+========================================= */
+
+.side-controls {
+    position: absolute;
+
+    left: calc(50% - 190px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    z-index: 20;
+}
+
+
+.control-btn {
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid #eeeeee;
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #111;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.control-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.10);
+}
+
+
+.control-btn:active {
+    transform: scale(0.94);
+}
+
+
+.arrow-btn {
+    font-size: 17px;
+    line-height: 1;
+}
+
+
+/* =========================================
+   CARD AREA
+========================================= */
+
+.card-area {
+    width: 250px;
+    min-height: 240px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+.card-container {
+    width: 250px;
+    height: 240px;
+
+    position: relative;
+}
+
+
+/* =========================================
+   CALL CARD
+========================================= */
+
+.call-card {
+    width: 210px;
+    min-height: 220px;
+
+    padding: 15px;
+
+    position: absolute;
+    inset: 0;
+
+    background: var(--card-bg);
+
+    border: 1px solid rgba(0, 0, 0, 0.025);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08),
+        0 2px 5px rgba(0, 0, 0, 0.04);
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.call-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 4px;
+    right: 4px;
+
+    bottom: -7px;
+
+    height: 10px;
+
+    background: #eeeeee;
+
+    border-radius: 0 0 10px 10px;
+
+    z-index: -1;
+
+    opacity: 0.8;
+}
+
+
+.call-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.10),
+        0 3px 8px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.card-header {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 12px;
+}
+
+
+.avatar {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================================
+   CARD INFORMATION
+========================================= */
+
+.card-info h2 {
+    font-size: 15px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    margin-bottom: 9px;
+}
+
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 7px;
+
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+
+.info-row span:first-child {
+    color: #777777;
+}
+
+
+.info-row span:last-child {
+    color: #444444;
+
+    text-align: right;
+}
+
+
+/* =========================================
+   CARD BUTTONS
+========================================= */
+
+.card-actions {
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.card-btn {
+    border: none;
+
+    border-radius: 20px;
+
+    padding: 6px 12px;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.card-btn:hover {
+    transform: translateY(-1px);
+}
+
+
+.call-btn {
+    background: #111111;
+    color: #ffffff;
+}
+
+
+.message-btn {
+    background: #eeeeee;
+    color: #222222;
+}
+
+
+/* =========================================
+   COLOR CONTROLS
+========================================= */
+
+.color-controls {
+    position: absolute;
+
+    left: calc(50% + 120px);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+
+    z-index: 20;
+}
+
+
+.color-btn {
+    width: 14px;
+    height: 14px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.color-btn:hover {
+    transform: scale(1.25);
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.16);
+}
+
+
+.color-black {
+    background: #111111;
+}
+
+
+.color-purple {
+    background: #a34cff;
+}
+
+
+.color-orange {
+    background: #ff963d;
+}
+
+
+.color-teal {
+    background: #18b8aa;
+}
+
+
+/* =========================================
+   MODAL OVERLAY
+========================================= */
+
+.modal {
+    position: fixed !important;
+
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    z-index: 9999;
+
+    display: none;
+
+    /* Perfect horizontal + vertical centering */
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+
+/* =========================================
+   OPEN STATE
+========================================= */
+
+.modal.is-open {
+    display: flex;
+}
+
+
+/* =========================================
+   MODAL CARD
+========================================= */
+
+.modal-card {
+    width: min(340px, calc(100vw - 40px));
+
+    padding: 20px 16px 17px;
+
+    background: #ffffff;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.10);
+
+    /* Move the centered card 30px downward */
+    transform: translateY(30px);
+
+    animation: modalIn 0.22s ease;
+}
+
+
+/* =========================================
+   MODAL ANIMATION
+========================================= */
+
+@keyframes modalIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(30px) scale(1);
+    }
+
+}
+
+/* =========================================
+   MODAL HEADER
+========================================= */
+
+.modal-header {
+    margin-bottom: 10px;
+}
+
+
+.modal-header h1 {
+    font-size: 16px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.form-group {
+    margin-bottom: 9px;
+}
+
+
+.form-group label,
+.category-group legend {
+    /* display: block; */
+
+    margin-bottom: 5px;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    color: #222222;
+}
+
+
+.form-group input {
+    width: 100%;
+
+    height: 28px;
+
+    padding: 0 10px;
+
+    border: 1px solid #e4e4e4;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #222222;
+
+    font-size: 10px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.form-group input::placeholder {
+    color: #999999;
+}
+
+
+.form-group input:focus {
+    border-color: #c9c9c9;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.035);
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.category-group {
+    border: none;
+
+    margin: 13px 0 15px;
+}
+
+
+.category-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+
+.category {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    min-height: 23px;
+
+    padding: 0 9px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background: #ffffff;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.category:hover {
+    transform: translateY(-1px);
+}
+
+
+.category input {
+    display: none;
+}
+
+
+.checkbox {
+    width: 9px;
+    height: 9px;
+
+    border: 1px solid #aaaaaa;
+
+    border-radius: 2px;
+
+    background: #ffffff;
+}
+
+
+.category input:checked+.checkbox {
+    background: currentColor;
+
+    box-shadow:
+        inset 0 0 0 2px #ffffff;
+}
+
+
+.emergency {
+    color: #b34b52;
+    border-color: #d47c81;
+}
+
+
+.important {
+    color: #b36b22;
+    border-color: #d99b5e;
+}
+
+
+.urgent {
+    color: #704b8c;
+    border-color: #9d79b5;
+}
+
+
+.no-rush {
+    color: #555555;
+    border-color: #bbbbbb;
+}
+
+
+/* =========================================
+   FORM BUTTONS
+========================================= */
+
+.submit-btn,
+.close-btn {
+    width: 100%;
+
+    height: 32px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.submit-btn:hover,
+.close-btn:hover {
+    transform: translateY(-1px);
+}
+
+
+.submit-btn:active,
+.close-btn:active {
+    transform: scale(0.99);
+}
+
+
+.submit-btn {
+    background: #111111;
+
+    color: #ffffff;
+
+    margin-bottom: 6px;
+}
+
+
+.close-btn {
+    background: #ff4b52;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .side-controls {
+        left: 20px;
+    }
+
+    .color-controls {
+        left: auto;
+        right: 20px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .card-area,
+    .card-container,
+    .call-card {
+        width: 200px;
+    }
+
+    .side-controls {
+        left: 10px;
+    }
+
+    .color-controls {
+        right: 10px;
+    }
+
+}
