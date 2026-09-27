@@ -223,3 +223,36 @@ function loadCards() {
 
 // Run when page loads
 loadCards();
+
+
+
+upBtn.addEventListener("click", function() {
+    const lastChild = cardContainer.lastElementChild;
+    if (lastChild) {
+        cardContainer.insertBefore(lastChild, cardContainer.firstElementChild);
+        //update
+        updateCardContainer();
+    }
+});
+
+downBtn.addEventListener("click", function() {
+    const firstChild = cardContainer.firstElementChild;
+    if (firstChild) {
+        cardContainer.appendChild(firstChild);
+        //update 
+        updateCardContainer();
+    }
+});
+
+
+function updateCardContainer() {
+    const cards = document.querySelectorAll(".cardContaier .card");
+
+    cards.forEach(function(card, index) {
+        card.style.zIndex = 3 - index;
+        card.style.transform = `translateY(${index * 10}px) scale(${0.9 - index * 0.05})`;
+        card.style.opacity = `${1 - index * 0.2}`;
+    });
+}
+
+updateCardContainer();
