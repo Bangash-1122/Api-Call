@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col items-center justify-center p-6 relative font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Demo Section to trigger / view notifications -->
+    <div class="text-center space-y-4 max-w-md">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
+            Toast Notification System
+        </div>
+        <h1 class="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+            Interactive Toasts
+        </h1>
+        <p class="text-sm text-slate-400 leading-relaxed">
+            Click the buttons below to trigger toast notifications or inspect the styled toast component.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 pt-2">
+            <button onclick="triggerToast('success')" class="px-4 py-2 text-sm font-medium rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 transition-all text-white shadow-lg shadow-emerald-950/40">
+                Success Toast
+            </button>
+            <button onclick="triggerToast('error')" class="px-4 py-2 text-sm font-medium rounded-xl bg-rose-600 hover:bg-rose-500 active:scale-95 transition-all text-white shadow-lg shadow-rose-950/40">
+                Error Toast
+            </button>
+            <button onclick="triggerToast('info')" class="px-4 py-2 text-sm font-medium rounded-xl bg-indigo-600 hover:bg-indigo-500 active:scale-95 transition-all text-white shadow-lg shadow-indigo-950/40">
+                Info Toast
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container (Fixed at top-right) -->
+    <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-3 w-full max-w-sm pointer-events-none sm:max-w-md">
+        
+        <!-- Decent Toaster Notification -->
+        <div id="sample-toast" class="pointer-events-auto relative overflow-hidden flex items-start gap-3.5 p-4 rounded-2xl bg-slate-900/90 backdrop-blur-xl border border-slate-800 shadow-2xl shadow-black/50 transition-all duration-300 transform translate-y-0 opacity-100 group hover:border-slate-700">
+            <!-- Icon Badge -->
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+
+            <!-- Message Details -->
+            <div class="flex-1 pt-0.5">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-sm font-semibold text-slate-100 tracking-wide">
+                        Changes Saved
+                    </h3>
+                    <span class="text-xs text-slate-500 font-mono">just now</span>
+                </div>
+                <p class="mt-1 text-xs text-slate-400 leading-relaxed">
+                    Your settings and preferences have been synchronized successfully.
+                </p>
+            </div>
+
+            <!-- Dismiss Button -->
+            <button onclick="dismissToast('sample-toast')" class="flex-shrink-0 text-slate-400 hover:text-slate-200 hover:bg-slate-800 p-1.5 rounded-lg transition-colors focus:outline-none" aria-label="Close notification">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <!-- Accent bottom border indicator -->
+            <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-500/50"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
