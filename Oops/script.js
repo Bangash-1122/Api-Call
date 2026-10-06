@@ -92,6 +92,24 @@
 // });
 
 // Now promises is resolve and reject.
+// let newPromise = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         let rn = Math.floor(Math.random() * 10);
+//         if (rn > 5) {
+//             res("resolved with" + rn);
+//         } else {
+//             rej("rejected with" + rn);
+//         }
+//     }, 3000);
+// });
+
+// newPromise.then((data) => {
+//     console.log(data);
+// }).catch((err) => {
+//     console.log(err);
+// });
+
+// wraper in tyr-catch async-await
 let newPromise = new Promise((res, rej) => {
     setTimeout(() => {
         let rn = Math.floor(Math.random() * 10);
@@ -100,11 +118,15 @@ let newPromise = new Promise((res, rej) => {
         } else {
             rej("rejected with" + rn);
         }
-    }, 3000);
+    }, 1000);
 });
 
-newPromise.then((data) => {
-    console.log(data);
-}).catch((err) => {
-    console.log(err);
-});
+async function abc() {
+    try {
+        let val = await newPromise;
+        console.log(val);
+    } catch (err) {
+        console.log(err);
+    }
+}
+abc();
