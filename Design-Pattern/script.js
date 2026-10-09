@@ -75,33 +75,33 @@
 // Hello, my name is Jane and I am 25 years old.
 
 
-function createProduct(name, price) {
-    let stock = 10;
-    return {
-        name,
-        price,
-        buy: function(qty) {
-            if (qty <= stock) {
-                stock -= qty;
-                console.log(`Booked - $${qty} pieces left ${stock}`);
-            } else {
-                console.error(`Out of stock - ${qty} pieces are not available.`);
-            }
-        },
-        refill: function(qty) {
-            stock += qty;
-            console.log(`Refilled - ${qty} pieces added. New stock: ${stock}`);
-        },
-        getRemainingStock: function() {
-            return stock;
-        }
-    };
-};
+// function createProduct(name, price) {
+//     let stock = 10;
+//     return {
+//         name,
+//         price,
+//         buy: function(qty) {
+//             if (qty <= stock) {
+//                 stock -= qty;
+//                 console.log(`Booked - $${qty} pieces left ${stock}`);
+//             } else {
+//                 console.error(`Out of stock - ${qty} pieces are not available.`);
+//             }
+//         },
+//         refill: function(qty) {
+//             stock += qty;
+//             console.log(`Refilled - ${qty} pieces added. New stock: ${stock}`);
+//         },
+//         getRemainingStock: function() {
+//             return stock;
+//         }
+//     };
+// };
 
-let product1 = createProduct("Book", 10);
-product1.buy(5);
-product1.refill(2);
-console.log(product1.getRemainingStock());
+// let product1 = createProduct("Book", 10);
+// product1.buy(5);
+// product1.refill(2);
+// console.log(product1.getRemainingStock());
 
 // Output 
 // Booked - 5 pieces left 5
@@ -109,4 +109,42 @@ console.log(product1.getRemainingStock());
 // 7
 
 
-// Singleton pattern
+// Observer Pattern (basic pub-sub)
+
+class YoutubeChannel {
+    constructor(channelName) {
+        this.subscriber = [];
+    }
+    subscribe(user) {
+        this.subscriber.push(user);
+        user.update(`you have subscribed ${this.channelName}`)
+    }
+    unsubscribe(user) {
+        this.subscribers = this.subscriber.filter(sub => sub !== user);
+        user.update(`you have unsubscribed ${this.channelName}`);
+    }
+    notify() {
+        this.subscribers.forEach(sub => sub.update(`Message from ${this.channelName}`));
+    }
+
+};
+
+class User {
+    constructor(name) {
+        this.name = name;
+    }
+
+    update(data) {
+        console.log(`${this.name} got notification - ${data}`)
+    }
+};
+
+
+let BangashCode = new YoutubeChannel('BangashCode');
+let user1 = new User('ubaid');
+let user2 = new User('Ali');
+
+BangashCode.subscribe(user1);
+BangashCode.subscribe(user2);
+
+BangashCode.notify("new video uploaded...");
