@@ -34,3 +34,23 @@ function throttle(fn, delay) {
 input.addEventListener("input", throttle(() => {
     console.log(input.value);
 }, 1000));
+
+
+// lazy loading 
+
+let img = document.querySelectorAll("img");
+
+const observer = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.add("loaded")
+            observer.unobserve(img)
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+img.forEach(img => observer.observe(img));
