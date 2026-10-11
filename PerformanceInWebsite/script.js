@@ -65,3 +65,15 @@ btn.addEventListener("click", async function() {
     let heavy = await import('./heavy.js');
     heavy.veryHeavy();
 });
+// // //
+const ul = document.querySelector('ul');
+
+const space = document.createDocumentFragment();
+
+for (let i = 0; i < 100; i++) {
+    const li = document.createElement("li");
+    li.textContent = "Item" + i;
+    space.appendChild(li);
+}
+
+ul.appendChild(space);
