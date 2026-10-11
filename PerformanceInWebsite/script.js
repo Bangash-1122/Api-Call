@@ -54,3 +54,14 @@ const observer = new IntersectionObserver(function(entries, observer) {
 });
 
 img.forEach(img => observer.observe(img));
+
+
+// import the heavy.js when btn is clicked here 
+// i.e after the initial load of the website
+const btn = document.querySelector("#btn");
+
+
+btn.addEventListener("click", async function() {
+    let heavy = await import('./heavy.js');
+    heavy.veryHeavy();
+});
