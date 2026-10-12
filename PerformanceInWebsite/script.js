@@ -98,3 +98,21 @@ btn.addEventListener("click", function() {
     li.textContent = result;
     ui.appendChild(li);
 });
+
+// map -> ek array ke top pay chalta hai and us arry ke sabhi members us map function ke ander ate hai and,
+// map function ek naya array return karta hai and us naye arrary mein jo bhi map ne return kiya hoga wahi placed hota hai
+
+
+const arr = [1, 2, 3, 4, 5];
+
+function myMap(arr, callback) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(callback(arr[i], i, arr));
+    }
+    return newArr;
+}
+let ans = myMap(arr, function(val) {
+    return val + 2;
+})
+console.log(ans);
