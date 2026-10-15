@@ -24,6 +24,20 @@ body {
     --space-xl: 32px;
     --space-2xl: 40px;
     --space-3xl: 48px;
+
+
+    /* Border colors */
+    --border-primary-olor: #333333;
+
+
+    /*  Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+    --border-radius-2xl: 20px;
+    --border-radius-3xl: 24px;
+    --border-radius-circle: 50%;
 }
 
 html {
@@ -41,10 +55,41 @@ section {
 
 section {
     padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: rgb(96, 96, 155);
+    gap: var(--space-lg);
+
 }
 
 section.infos {
     width: 100%;
     display: flex;
+    justify-content: space-between;
+}
+
+
+info {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--text-primary-color);
+    border-radius: var(--border-radius-sm);
+}
+
+
+.board {
+    border: 1px solid var(--text-primary-color);
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(30px, 1fr));
+
+}
+
+.block {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--border-primary-color);
+}
     justify-content: space-between;
 }
