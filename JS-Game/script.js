@@ -20,6 +20,8 @@ const snake = [{
     }
 ];
 
+let direction = 'left'
+
 
 // for (let i = 0; i < rows * cols; i++) {
 //     const block = document.createElement("div");
@@ -34,5 +36,25 @@ for (let row = 0; row < rows; row++) {
         block.classList.add("block");
         board.appendChild(block);
         blocks[`${row}-${col}`] = block
+    }
+}
+
+function renderSnake() {
+    snake.forEach(segment => {
+        blocks[`${segment.x}-${segment.y}`].classList.add("fill")
+    })
+}
+
+setInterval(() => {
+
+    let head = null
+    if (direction === "left") {
+        head = {
+            x: snake[0].x,
+            y: snake[0].y - 1
+        }
+    }
+    renderSnake()
+}, 300)
     }
 }
