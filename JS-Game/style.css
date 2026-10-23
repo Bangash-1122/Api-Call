@@ -14,6 +14,7 @@ body {
     /* Background colors */
     --bg-primary-color: #0c0c0c;
     --bg-fill-color: #fdfdfc;
+    --bg-food-color: #ff3b3b;
     /* Text colors */
     --text-primary-color: #f0f0f0;
 
@@ -95,4 +96,5 @@ info {
 
 .fill {
     background-color: var(--bg-fill-color);
+    background-color: var(--bg-food-color);
 }
