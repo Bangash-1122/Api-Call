@@ -10,3 +10,13 @@ console.log(a, b);
 // Then out swap the values a = 20; and b = 10;
 
 // swapping the anather method
+
+let x = 10;
+let y = 20;
+
+[a, b] = [b, a] // swaping the value in destructring way
+
+console.log(a, b);
+
+     // Then output x = 20; and y = 10; this si the answer
+
